@@ -1,0 +1,4 @@
+C:\Users\Administrator\Documents\GitHub\SplitTableEngine\Code\SMF\SMF\bin\Debug\SMFramework.dll
+C:\Users\Administrator\Documents\GitHub\SplitTableEngine\Code\SMF\SMF\bin\Debug\SMFramework.pdb
+C:\Users\Administrator\Documents\GitHub\SplitTableEngine\Code\SMF\SMF\obj\Debug\SMFramework.dll
+C:\Users\Administrator\Documents\GitHub\SplitTableEngine\Code\SMF\SMF\obj\Debug\SMFramework.pdb

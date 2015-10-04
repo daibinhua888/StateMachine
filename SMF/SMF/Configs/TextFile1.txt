@@ -1,0 +1,13 @@
+﻿state 交易修改申请
+	states
+		已提交申请(Beginable)
+		审核通过(AutoCompletable)
+		审核拒绝(AutoCompletable)
+		取消(AutoCompletable)
+	end states
+	links
+		已提交申请->审核通过
+		已提交申请->审核拒绝
+		已提交申请->取消
+	end links
+end state
