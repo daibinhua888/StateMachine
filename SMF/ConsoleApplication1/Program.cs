@@ -14,13 +14,18 @@ namespace ConsoleApplication1
         {
             string requestId = Guid.NewGuid().ToString();
 
+            var test=SMF.Get<交易修改申请>(requestId).CanTransitToState("已提交申请");
+
+            Console.WriteLine(string.Format("能否切换到 已提交申请 状态？{0}", test));
+
             SMF.Get<交易修改申请>(requestId).TransitToState("已提交申请");
 
             SMF.Get<交易修改申请>(requestId).TransitToState("审核拒绝", () =>
             {
-                Console.Write("test");
+                Console.WriteLine("...");
             });
 
+            Console.WriteLine("Done");
             Console.ReadKey();
         }
     }

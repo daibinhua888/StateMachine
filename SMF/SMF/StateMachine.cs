@@ -49,5 +49,10 @@ namespace SMFramework
                 ts.Complete();
             }
         }
+
+        public bool CanTransitToState(string newStateName)
+        {
+            return stateMachineDefine.CanTransitable(newStateName);
+        }
     }
 }
