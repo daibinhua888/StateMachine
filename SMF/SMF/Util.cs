@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SMFramework
 {
-    internal static class Transitions
+    internal static class Util
     {
-        internal static void MapOneWayTo(State from, State to)
+        internal static void MapOneWayTransition(State from, State to)
         {
             if (from.NextStates.Contains(to))
                 return;

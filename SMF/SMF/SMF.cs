@@ -8,12 +8,12 @@ namespace SMFramework
 {
     public static class SMF
     {
-        private static Dictionary<string, BaseStateMachineDefine> statemachines = new Dictionary<string, BaseStateMachineDefine>();
+        private static Dictionary<string, StateMachineConfig> statemachines = new Dictionary<string, StateMachineConfig>();
 
         public static StateMachine Get<T>(string relateId)
-            where T : BaseStateMachineDefine,new()
+            where T : StateMachineConfig,new()
         {   
-            BaseStateMachineDefine machine = new T();
+            StateMachineConfig machine = new T();
 
             machine.SetRelateID(relateId);
 

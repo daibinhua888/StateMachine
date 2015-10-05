@@ -1,4 +1,5 @@
-﻿using SMFramework.Repositorys;
+﻿using SMFramework.Exceptions;
+using SMFramework.Repositorys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SMFramework
 {
-    public abstract class BaseStateMachineDefine
+    public abstract class StateMachineConfig
     {
         private IStateRepository stateRepository = null;
         private Dictionary<string, State> states = new Dictionary<string, State>();
@@ -22,20 +23,20 @@ namespace SMFramework
         public string InitialState { get { return this.initialState; } }
         public string CompleteState { get { return this.completeState; } }
 
-        public BaseStateMachineDefine()
+        public StateMachineConfig()
         {
             this.initialState = "Init";
             this.completeState = "Done";
 
-            this.stateMachineType = ConfigMachineType();
+            this.stateMachineType = MachineType();
 
             this.AddState("Init", false, false);
-            ConfigStates();
+            States();
             this.AddState("Done", false, false);
 
             AutoLinkToBeginStates();
 
-            ConfigLinks();
+            Links();
 
             AutoLinkAutoCompleteStates();
 
@@ -72,11 +73,11 @@ namespace SMFramework
             this.currentState = lastState;
         }
 
-        protected abstract string ConfigMachineType();
+        protected abstract string MachineType();
 
-        protected abstract void ConfigStates();
+        protected abstract void States();
 
-        protected abstract void ConfigLinks();
+        protected abstract void Links();
 
         protected void AddCanbeBeginState(string stateName)
         {
@@ -111,7 +112,7 @@ namespace SMFramework
 
         private void LinkStates(State from, State to)
         {
-            Transitions.MapOneWayTo(from, to);
+            Util.MapOneWayTransition(from, to);
         }
 
         private void SetCurrentState(string stateName)

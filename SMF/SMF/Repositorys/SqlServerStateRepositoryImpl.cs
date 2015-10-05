@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SMFramework.Repositorys
 {
-    class StateRepositoryImpl : IStateRepository
+    class SqlServerStateRepositoryImpl : IStateRepository
     {
         /*
             StateMachineType	NVARCHAR(300)	NOT NULL

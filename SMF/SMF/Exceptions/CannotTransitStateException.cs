@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SMFramework
+namespace SMFramework.Exceptions
 {
     public class CannotTransitStateException:Exception
     {

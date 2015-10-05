@@ -41,16 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseStateMachineDefine.cs" />
-    <Compile Include="CannotTransitStateException.cs" />
+    <Compile Include="StateMachineConfig.cs" />
+    <Compile Include="Exceptions\CannotTransitStateException.cs" />
     <Compile Include="Configs\Config.cs" />
     <Compile Include="IStateRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SMF.cs" />
     <Compile Include="State.cs" />
     <Compile Include="StateMachine.cs" />
-    <Compile Include="Repositorys\StateRepositoryImpl.cs" />
-    <Compile Include="Transitions.cs" />
+    <Compile Include="Repositorys\SqlServerStateRepositoryImpl.cs" />
+    <Compile Include="Util.cs" />
     <Compile Include="Repositorys\InMemoryStateRepositoryImpl.cs" />
   </ItemGroup>
   <ItemGroup>

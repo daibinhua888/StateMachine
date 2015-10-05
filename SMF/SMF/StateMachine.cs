@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMFramework.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,9 @@ namespace SMFramework
 {
     public class StateMachine
     {
-        private BaseStateMachineDefine stateMachineDefine = null;
+        private StateMachineConfig stateMachineDefine = null;
 
-        public StateMachine(BaseStateMachineDefine define)
+        public StateMachine(StateMachineConfig define)
         {
             this.stateMachineDefine = define;
         }
